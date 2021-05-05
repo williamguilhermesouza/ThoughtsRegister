@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BehaviorActivity">
-
+    tools:context=".ActivatingEventFragment">
 
     <ImageButton
         android:id="@+id/backButton"
@@ -23,25 +22,22 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="@string/digite_o_comportamento_resultante"
-        android:importantForAutofill="no"
+        android:hint="@string/digite_aqui_o_evento_ativador"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/forwardButton"
         app:layout_constraintStart_toEndOf="@+id/backButton"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:importantForAutofill="no" />
 
-    <Button
-        android:id="@+id/saveThoughtButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="156dp"
-        android:text="@string/salvar_pensamento"
-        android:textAllCaps="false"
+    <ImageButton
+        android:id="@+id/forwardButton"
+        android:layout_width="46dp"
+        android:layout_height="0dp"
+        android:background="?attr/selectableItemBackground"
+        android:contentDescription="@string/forward_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/backButton"
-        app:layout_constraintTop_toBottomOf="@+id/activatingEventInput" />
-
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_round_arrow_forward_ios_24" />
 </androidx.constraintlayout.widget.ConstraintLayout>

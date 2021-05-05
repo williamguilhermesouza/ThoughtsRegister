@@ -8,4 +8,6 @@
     <string name="digite_aqui_seu_pensamento">Digite aqui seu pensamento...</string>
     <string name="digite_aqui_o_sentimento_gerado">Digite aqui o sentimento gerado...</string>
     <string name="digite_o_comportamento_resultante">Digite o comportamento resultante....</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

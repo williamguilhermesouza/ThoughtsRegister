@@ -3,6 +3,7 @@ package tk.williamsouza.thoughtsregister
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.navigation.findNavController
 import tk.williamsouza.thoughtsregister.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -15,8 +16,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
         binding.newThoughtActionButton.setOnClickListener {
-            val intent = Intent(this, ActivatingEventActivity::class.java)
-            startActivity(intent)
+            val navController = findNavController(this.taskId)
+
         }
     }
 }

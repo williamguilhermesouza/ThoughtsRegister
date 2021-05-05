@@ -9,11 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ThoughtsRegister">
-        <activity android:name=".BehaviorActivity"></activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".BehaviorActivity" />
         <activity android:name=".FeelingActivity" />
         <activity android:name=".ThoughtActivity" />
         <activity android:name=".ActivatingEventActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".NavigationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

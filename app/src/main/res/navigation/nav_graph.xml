@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainActivity">
+
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="tk.williamsouza.thoughtsregister.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <activity
+        android:id="@+id/activatingEventActivity"
+        android:name="tk.williamsouza.thoughtsregister.ActivatingEventActivity"
+        android:label="activity_activating_event"
+        tools:layout="@layout/activity_activating_event" />
+    <activity
+        android:id="@+id/thoughtActivity"
+        android:name="tk.williamsouza.thoughtsregister.ThoughtActivity"
+        android:label="activity_thought"
+        tools:layout="@layout/activity_thought" />
+    <activity
+        android:id="@+id/feelingActivity"
+        android:name="tk.williamsouza.thoughtsregister.FeelingActivity"
+        android:label="activity_feeling"
+        tools:layout="@layout/activity_feeling" />
+    <activity
+        android:id="@+id/behaviorActivity"
+        android:name="tk.williamsouza.thoughtsregister.BehaviorActivity"
+        android:label="activity_behavior"
+        tools:layout="@layout/activity_behavior" />
+</navigation>

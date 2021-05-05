@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ThoughtsRegister</string>
+    <string name="new_thought_button">new thought button</string>
+    <string name="back_button">back button</string>
+    <string name="digite_aqui_o_evento_ativador">Digite aqui o evento ativador....</string>
+    <string name="forward_button">forward button</string>
+    <string name="salvar_pensamento">Salvar Pensamento</string>
+    <string name="digite_aqui_seu_pensamento">Digite aqui seu pensamento...</string>
+    <string name="digite_aqui_o_sentimento_gerado">Digite aqui o sentimento gerado...</string>
+    <string name="digite_o_comportamento_resultante">Digite o comportamento resultante....</string>
+</resources>

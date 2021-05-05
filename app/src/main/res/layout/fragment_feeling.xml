@@ -19,13 +19,13 @@
         app:srcCompat="@drawable/ic_round_arrow_back_ios_24" />
 
     <EditText
-        android:id="@+id/activatingEventInput"
+        android:id="@+id/feelingInput"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/digite_aqui_o_sentimento_gerado"
         android:importantForAutofill="no"
-        android:inputType="textPersonName"
+        android:inputType="textMultiLine|textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/forwardButton"
         app:layout_constraintStart_toEndOf="@+id/backButton"

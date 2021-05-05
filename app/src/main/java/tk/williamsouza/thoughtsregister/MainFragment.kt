@@ -21,6 +21,7 @@ class MainFragment : Fragment() {
     ): View? {
         binding.newThoughtActionButton.setOnClickListener {
             val action = MainFragmentDirections.actionMainFragment2ToActivatingEventFragment()
+            NavigationActivity.navStack = ActivatingEventFragment::class.java.name
             findNavController().navigate(action)
         }
 

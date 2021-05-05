@@ -19,13 +19,13 @@
         app:srcCompat="@drawable/ic_round_arrow_back_ios_24" />
 
     <EditText
-        android:id="@+id/activatingEventInput"
+        android:id="@+id/behaviorInput"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/digite_o_comportamento_resultante"
         android:importantForAutofill="no"
-        android:inputType="textPersonName"
+        android:inputType="textMultiLine|textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/backButton"
@@ -42,7 +42,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/backButton"
-        app:layout_constraintTop_toBottomOf="@+id/activatingEventInput" />
+        app:layout_constraintTop_toBottomOf="@+id/thoughtInput" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

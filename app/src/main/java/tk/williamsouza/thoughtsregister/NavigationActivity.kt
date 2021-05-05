@@ -5,7 +5,10 @@ import android.os.Bundle
 import android.util.Log
 import android.view.GestureDetector
 import android.view.MotionEvent
+import android.widget.TextView
+import androidx.core.os.bundleOf
 import androidx.core.view.GestureDetectorCompat
+import androidx.core.view.get
 import androidx.navigation.findNavController
 import tk.williamsouza.thoughtsregister.databinding.ActivityNavigationBinding
 
@@ -18,7 +21,11 @@ class NavigationActivity :
     GestureDetector.OnDoubleTapListener {
     private lateinit var binding: ActivityNavigationBinding
     private lateinit var mDetector: GestureDetectorCompat
-    private lateinit var navStack: String
+
+    companion object {
+        lateinit var navStack: String
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,6 +73,7 @@ class NavigationActivity :
         velocityY: Float
     ): Boolean {
         Log.d(DEBUG_TAG, "onFling $e1 - $e2 pressed")
+
         val action = when(navStack) {
             MainFragment::class.java.name -> {
                 navStack = ActivatingEventFragment::class.java.name

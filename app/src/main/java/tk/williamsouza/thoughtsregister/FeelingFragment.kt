@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import tk.williamsouza.thoughtsregister.databinding.FragmentFeelingBinding
 
@@ -25,8 +26,12 @@ class FeelingFragment : Fragment() {
         }
 
         binding.forwardButton.setOnClickListener {
-            val action = FeelingFragmentDirections.actionFeelingFragmentToBehaviorFragment()
-            findNavController().navigate(action)
+            val feeling = binding.feelingInput.text.toString()
+            val thought = arguments?.getString("thought")
+            val activatingEvent = arguments?.getString("activatingEvent")
+            val bundle = bundleOf("activatingEvent" to activatingEvent, "thought" to thought, "feeling" to feeling)
+            NavigationActivity.navStack = BehaviorFragment::class.java.name
+            findNavController().navigate(R.id.action_feelingFragment_to_behaviorFragment, bundle)
         }
 
         val view = binding.root

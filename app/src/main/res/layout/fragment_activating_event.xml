@@ -23,12 +23,12 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/digite_aqui_o_evento_ativador"
-        android:inputType="textPersonName"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine|textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/forwardButton"
         app:layout_constraintStart_toEndOf="@+id/backButton"
-        app:layout_constraintTop_toTopOf="parent"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/forwardButton"

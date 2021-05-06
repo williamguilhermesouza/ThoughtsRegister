@@ -5,23 +5,18 @@ import android.os.Bundle
 import android.view.*
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentPagerAdapter
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
 import androidx.viewpager2.widget.ViewPager2
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Dispatchers.Main
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import tk.williamsouza.thoughtsregister.adapters.ThoughtListAdapter
 import tk.williamsouza.thoughtsregister.databinding.FragmentMainBinding
 import tk.williamsouza.thoughtsregister.models.Thought
 import tk.williamsouza.thoughtsregister.room.AppDatabase
-import java.time.LocalDateTime
-import java.util.*
 import kotlin.collections.ArrayList
 
 
@@ -38,15 +33,14 @@ class MainFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         val viewPager = activity?.findViewById<ViewPager2>(R.id.navigationViewPager)
         binding.newThoughtActionButton.setOnClickListener {
             viewPager?.currentItem = 1
         }
 
-        val view = binding.root
-        return view
+        return binding.root
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -78,6 +72,8 @@ class MainFragment : Fragment() {
         }
 
         thoughtsAdapter.submitList(data)
+        thoughtsAdapter.notifyDataSetChanged()
+
 
     }
 

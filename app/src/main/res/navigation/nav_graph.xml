@@ -3,72 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/mainFragment2">
+    app:startDestination="@id/splashFragment">
     <fragment
-        android:id="@+id/mainFragment2"
-        android:name="tk.williamsouza.thoughtsregister.MainFragment"
-        android:label="fragment_main"
-        tools:layout="@layout/fragment_main" >
+        android:id="@+id/splashFragment"
+        android:name="tk.williamsouza.thoughtsregister.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
         <action
-            android:id="@+id/action_mainFragment2_to_activatingEventFragment"
-            app:destination="@id/activatingEventFragment"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"/>
+            android:id="@+id/action_splashFragment_to_viewPagerFragment"
+            app:destination="@id/viewPagerFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
-        android:id="@+id/activatingEventFragment"
-        android:name="tk.williamsouza.thoughtsregister.ActivatingEventFragment"
-        android:label="fragment_activating_event"
-        tools:layout="@layout/fragment_activating_event" >
-        <action
-            android:id="@+id/action_activatingEventFragment_to_thoughtFragment"
-            app:destination="@id/thoughtFragment"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"/>
-    </fragment>
-    <fragment
-        android:id="@+id/thoughtFragment"
-        android:name="tk.williamsouza.thoughtsregister.ThoughtFragment"
-        android:label="fragment_thought"
-        tools:layout="@layout/fragment_thought" >
-        <action
-            android:id="@+id/action_thoughtFragment_to_feelingFragment"
-            app:destination="@id/feelingFragment"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"/>
-    </fragment>
-    <fragment
-        android:id="@+id/feelingFragment"
-        android:name="tk.williamsouza.thoughtsregister.FeelingFragment"
-        android:label="fragment_feeling"
-        tools:layout="@layout/fragment_feeling" >
-        <action
-            android:id="@+id/action_feelingFragment_to_behaviorFragment"
-            app:destination="@id/behaviorFragment"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"/>
-    </fragment>
-    <fragment
-        android:id="@+id/behaviorFragment"
-        android:name="tk.williamsouza.thoughtsregister.BehaviorFragment"
-        android:label="fragment_behavior"
-        tools:layout="@layout/fragment_behavior" >
-        <action
-            android:id="@+id/action_behaviorFragment_to_mainFragment2"
-            app:destination="@id/mainFragment2"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popUpTo="@id/mainFragment2"
-            app:popUpToInclusive="true"/>
-    </fragment>
+        android:id="@+id/viewPagerFragment"
+        android:name="tk.williamsouza.thoughtsregister.ViewPagerFragment"
+        android:label="fragment_view_pager"
+        tools:layout="@layout/fragment_view_pager" />
 </navigation>

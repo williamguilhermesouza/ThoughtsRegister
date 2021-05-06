@@ -27,18 +27,6 @@ class NavigationActivity : AppCompatActivity(){
         binding = ActivityNavigationBinding.inflate(layoutInflater)
         val view = binding.root
 
-        val fragmentList = arrayListOf<Fragment>(
-            MainFragment(),
-            ActivatingEventFragment(),
-            ThoughtFragment(),
-            FeelingFragment(),
-            BehaviorFragment()
-        )
-
-        val adapter = ViewPagerAdapter(fragmentList, supportFragmentManager, lifecycle)
-
-        binding.navigationViewPager.adapter = adapter
-
         setContentView(view)
 
     }

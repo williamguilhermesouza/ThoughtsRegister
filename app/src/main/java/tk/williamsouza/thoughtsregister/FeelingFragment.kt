@@ -1,5 +1,6 @@
 package tk.williamsouza.thoughtsregister
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
+import androidx.viewpager2.widget.ViewPager2
 import tk.williamsouza.thoughtsregister.databinding.FragmentFeelingBinding
 
 class FeelingFragment : Fragment() {
@@ -21,19 +23,32 @@ class FeelingFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        val viewPager = activity?.findViewById<ViewPager2>(R.id.navigationViewPager)
+
         binding.backButton.setOnClickListener {
-            findNavController().navigateUp()
+            viewPager?.currentItem = 2
         }
 
         binding.forwardButton.setOnClickListener {
-            val feeling = binding.feelingInput.text.toString()
-            val thought = arguments?.getString("thought")
-            val activatingEvent = arguments?.getString("activatingEvent")
-            val bundle = bundleOf("activatingEvent" to activatingEvent, "thought" to thought, "feeling" to feeling)
-            findNavController().navigate(R.id.action_feelingFragment_to_behaviorFragment, bundle)
+            viewPager?.currentItem = 4
+
+        }
+
+        viewPager?.addOnLayoutChangeListener { v, left, top, right, bottom, oldLeft, oldTop, oldRight, oldBottom ->
+            saveInputToSharedPref()
         }
 
         val view = binding.root
         return view
+    }
+
+
+
+    private fun saveInputToSharedPref() {
+        val sharedPref = requireActivity().getSharedPreferences("thought", Context.MODE_PRIVATE)
+        val editor = sharedPref.edit()
+        editor.putString("feeling", binding.feelingInput.text.toString())
+        editor.apply()
     }
 }

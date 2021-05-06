@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentPagerAdapter
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
+import androidx.viewpager2.widget.ViewPager2
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Dispatchers.Main
@@ -39,9 +40,9 @@ class MainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        val viewPager = activity?.findViewById<ViewPager2>(R.id.navigationViewPager)
         binding.newThoughtActionButton.setOnClickListener {
-            val action = MainFragmentDirections.actionMainFragment2ToActivatingEventFragment()
-            findNavController().navigate(action)
+            viewPager?.currentItem = 1
         }
 
         val view = binding.root

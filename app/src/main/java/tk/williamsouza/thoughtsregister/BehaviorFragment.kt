@@ -1,13 +1,16 @@
 package tk.williamsouza.thoughtsregister
 
+import android.content.Context
 import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import androidx.room.Room
+import androidx.viewpager2.widget.ViewPager2
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
@@ -29,14 +32,21 @@ class BehaviorFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        val viewPager = activity?.findViewById<ViewPager2>(R.id.navigationViewPager)
+
         binding.backButton.setOnClickListener {
-            findNavController().navigateUp()
+            viewPager?.currentItem = 3
         }
 
         binding.saveThoughtButton.setOnClickListener {
-            val activatingEvent = arguments?.getString("activatingEvent")
-            val thought = arguments?.getString("thought")
-            val feeling = arguments?.getString("feeling")
+
+            val sharedPref = requireActivity().getSharedPreferences("thought", Context.MODE_PRIVATE)
+
+
+            val activatingEvent = sharedPref.getString("activatingEvent", "")
+            val thought = sharedPref.getString("thought", "")
+            val feeling = sharedPref.getString("feeling", "")
             val behavior = binding.behaviorInput.text.toString()
 
             val db = Room.databaseBuilder(
@@ -51,11 +61,11 @@ class BehaviorFragment : Fragment() {
             }
 
             println("event: $activatingEvent \n thought: $thought \n feeling: $feeling \n behavior: $behavior \n")
-            val action = BehaviorFragmentDirections.actionBehaviorFragmentToMainFragment2()
-            findNavController().navigate(action)
+            viewPager?.currentItem = 0
         }
 
         val view = binding.root
         return view
+
     }
 }

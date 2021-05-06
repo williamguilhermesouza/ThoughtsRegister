@@ -7,7 +7,7 @@ import java.time.LocalDateTime
 
 @Entity
 data class Thought(
-    @PrimaryKey(autoGenerate = true) val id: Int,
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
     @ColumnInfo(name="date") val date: String,
     @ColumnInfo(name="activatingEvent") val activatingEvent: String,
     @ColumnInfo(name="thought") val thought: String,

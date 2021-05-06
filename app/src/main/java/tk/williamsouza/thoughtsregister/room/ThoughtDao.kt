@@ -9,14 +9,14 @@ import tk.williamsouza.thoughtsregister.models.Thought
 @Dao
 interface ThoughtDao{
     @Query("SELECT * FROM thought")
-    fun getAll(): List<Thought>
+    suspend fun getAll(): List<Thought>
 
     @Query("SELECT * FROM thought WHERE id = (:thoughtId)")
-    fun getById(thoughtId: Int): Thought
+    suspend fun getById(thoughtId: Int): Thought
 
     @Insert
-    fun insertAll(vararg thoughts: Thought)
+    suspend fun insertAll(vararg thoughts: Thought)
 
     @Delete
-    fun delete(thought: Thought)
+    suspend fun delete(thought: Thought)
 }

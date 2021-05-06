@@ -20,7 +20,7 @@ class SplashFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         Handler().postDelayed({
-            findNavController().navigate(R.id.action_splashFragment_to_viewPagerFragment)
+            findNavController().navigate(R.id.action_splashFragment_to_onboardingViewPagerFragment)
         }, 3000)
 
         // Inflate the layout for this fragment

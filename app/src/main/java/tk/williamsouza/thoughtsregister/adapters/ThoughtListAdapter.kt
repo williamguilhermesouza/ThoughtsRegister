@@ -1,12 +1,16 @@
 package tk.williamsouza.thoughtsregister.adapters
 
+import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import tk.williamsouza.thoughtsregister.R
 import tk.williamsouza.thoughtsregister.models.Thought
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 
 class ThoughtListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
@@ -18,6 +22,7 @@ class ThoughtListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
         )
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when(holder) {
             is ThoughtsViewHolder -> {
@@ -40,8 +45,10 @@ class ThoughtListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
         val dateView = itemView.findViewById<TextView>(R.id.dateTextView)
         val thoughtView = itemView.findViewById<TextView>(R.id.thoughtTextView)
 
+        @RequiresApi(Build.VERSION_CODES.O)
         fun bind(thought: Thought) {
-            dateView.text = thought.date.toString()
+            val date = LocalDateTime.parse(thought.date)
+            dateView.text = date.format(DateTimeFormatter.ISO_LOCAL_DATE)
             thoughtView.text = thought.thought
         }
     }

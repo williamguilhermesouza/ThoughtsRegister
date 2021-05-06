@@ -57,6 +57,7 @@ class BehaviorFragment : Fragment() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 CoroutineScope(IO).launch {
                     db.thoughtDao().insertAll(Thought( date=LocalDateTime.now().toString(), activatingEvent = activatingEvent!!, thought = thought!!, feeling = feeling!!, behavior = behavior))
+
                 }
             }
 

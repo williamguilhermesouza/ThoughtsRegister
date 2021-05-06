@@ -1,9 +1,7 @@
 package tk.williamsouza.thoughtsregister
 
-import android.os.Build
 import android.os.Bundle
 import android.view.*
-import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
@@ -43,7 +41,6 @@ class MainFragment : Fragment() {
         return binding.root
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initRecyclerView()
@@ -57,7 +54,6 @@ class MainFragment : Fragment() {
         thoughtsView.adapter = thoughtsAdapter
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     private fun addDataSet() {
         val db = Room.databaseBuilder(
             requireContext().applicationContext,
@@ -68,17 +64,23 @@ class MainFragment : Fragment() {
             val data = db.thoughtDao().getAll()
             withContext(Main){
                 setData(data)
+                thoughtsAdapter.submitList(data)
+                thoughtsAdapter.notifyDataSetChanged()
             }
         }
 
-        thoughtsAdapter.submitList(data)
-        thoughtsAdapter.notifyDataSetChanged()
+
 
 
     }
 
     private fun setData(_data: List<Thought>) {
         data = _data
+    }
+
+    override fun onResume() {
+        super.onResume()
+        thoughtsAdapter.notifyDataSetChanged()
     }
 
 

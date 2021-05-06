@@ -9,7 +9,7 @@ import tk.williamsouza.thoughtsregister.models.Thought
 @Dao
 interface ThoughtDao{
     @Query("SELECT * FROM thought")
-    suspend fun getAll(): List<Thought>
+    fun getAll(): List<Thought>
 
     @Query("SELECT * FROM thought WHERE id = (:thoughtId)")
     suspend fun getById(thoughtId: Int): Thought

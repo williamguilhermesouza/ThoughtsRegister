@@ -38,9 +38,9 @@ class MainFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         binding.newThoughtActionButton.setOnClickListener {
             val action = MainFragmentDirections.actionMainFragment2ToActivatingEventFragment()
-            NavigationActivity.navStack = ActivatingEventFragment::class.java.name
             findNavController().navigate(action)
         }
 
@@ -64,8 +64,6 @@ class MainFragment : Fragment() {
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun addDataSet() {
-        //val data = arrayListOf<Thought>(Thought(0, LocalDateTime.now().toString(), "evento", "thought", "feeling", "behavior"),
-        //    Thought(1, LocalDateTime.now().toString(), "eventoasd", "thasdought", "feeasdasling", "behasdavior"))
         val db = Room.databaseBuilder(
             requireContext().applicationContext,
             AppDatabase::class.java, "thoughts"

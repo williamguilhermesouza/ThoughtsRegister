@@ -30,7 +30,6 @@ class FeelingFragment : Fragment() {
             val thought = arguments?.getString("thought")
             val activatingEvent = arguments?.getString("activatingEvent")
             val bundle = bundleOf("activatingEvent" to activatingEvent, "thought" to thought, "feeling" to feeling)
-            NavigationActivity.navStack = BehaviorFragment::class.java.name
             findNavController().navigate(R.id.action_feelingFragment_to_behaviorFragment, bundle)
         }
 

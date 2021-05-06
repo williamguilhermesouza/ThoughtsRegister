@@ -52,7 +52,6 @@ class BehaviorFragment : Fragment() {
 
             println("event: $activatingEvent \n thought: $thought \n feeling: $feeling \n behavior: $behavior \n")
             val action = BehaviorFragmentDirections.actionBehaviorFragmentToMainFragment2()
-            NavigationActivity.navStack = MainFragment::class.java.name
             findNavController().navigate(action)
         }
 

@@ -30,7 +30,7 @@ class FifthInstructionFragment : Fragment() {
             val editor = sharedPref.edit()
             editor.putBoolean("onboarding", true)
             editor.apply()
-            findNavController().navigate(R.id.action_onboardingViewPagerFragment_to_viewPagerFragment)
+            findNavController().navigate(R.id.action_onboardingViewPagerFragment_to_mainFragment)
         }
         // Inflate the layout for this fragment
         return binding.root

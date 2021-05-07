@@ -1,4 +1,4 @@
-package tk.williamsouza.thoughtsregister
+package tk.williamsouza.thoughtsregister.newthought
 
 import android.content.Context
 import android.os.Bundle
@@ -6,18 +6,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
-import tk.williamsouza.thoughtsregister.databinding.FragmentActivatingEventBinding
+import tk.williamsouza.thoughtsregister.R
+import tk.williamsouza.thoughtsregister.databinding.FragmentFeelingBinding
 
-class ActivatingEventFragment : Fragment() {
-    private lateinit var binding: FragmentActivatingEventBinding
+class FeelingFragment : Fragment() {
+    private lateinit var binding: FragmentFeelingBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = FragmentActivatingEventBinding.inflate(layoutInflater)
+        binding = FragmentFeelingBinding.inflate(layoutInflater)
     }
 
     override fun onCreateView(
@@ -28,11 +26,12 @@ class ActivatingEventFragment : Fragment() {
         val viewPager = activity?.findViewById<ViewPager2>(R.id.navigationViewPager)
 
         binding.backButton.setOnClickListener {
-            viewPager?.currentItem = 0
+            viewPager?.currentItem = 1
         }
 
         binding.forwardButton.setOnClickListener {
-            viewPager?.currentItem = 2
+            viewPager?.currentItem = 3
+
         }
 
         viewPager?.addOnLayoutChangeListener { v, left, top, right, bottom, oldLeft, oldTop, oldRight, oldBottom ->
@@ -43,10 +42,12 @@ class ActivatingEventFragment : Fragment() {
         return view
     }
 
+
+
     private fun saveInputToSharedPref() {
         val sharedPref = requireActivity().getSharedPreferences("thought", Context.MODE_PRIVATE)
         val editor = sharedPref.edit()
-        editor.putString("activatingEvent", binding.activatingEventInput.text.toString())
+        editor.putString("feeling", binding.feelingInput.text.toString())
         editor.apply()
     }
 }

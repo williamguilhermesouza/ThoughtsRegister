@@ -15,25 +15,40 @@
             app:popUpTo="@id/splashFragment"
             app:popUpToInclusive="true" />
         <action
-            android:id="@+id/action_splashFragment_to_viewPagerFragment"
-            app:destination="@id/viewPagerFragment"
+            android:id="@+id/action_splashFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
             app:popUpTo="@id/splashFragment"
             app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/viewPagerFragment"
-        android:name="tk.williamsouza.thoughtsregister.ViewPagerFragment"
+        android:name="tk.williamsouza.thoughtsregister.newthought.ViewPagerFragment"
         android:label="fragment_view_pager"
-        tools:layout="@layout/fragment_view_pager" />
+        tools:layout="@layout/fragment_view_pager" >
+        <action
+            android:id="@+id/action_viewPagerFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/viewPagerFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/onboardingViewPagerFragment"
         android:name="tk.williamsouza.thoughtsregister.onboarding.OnboardingViewPagerFragment"
         android:label="fragment_onboarding_view_pager"
         tools:layout="@layout/fragment_onboarding_view_pager" >
         <action
-            android:id="@+id/action_onboardingViewPagerFragment_to_viewPagerFragment"
-            app:destination="@id/viewPagerFragment"
+            android:id="@+id/action_onboardingViewPagerFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
             app:popUpTo="@id/onboardingViewPagerFragment"
             app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="tk.williamsouza.thoughtsregister.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_viewPagerFragment"
+            app:destination="@id/viewPagerFragment" />
     </fragment>
 </navigation>

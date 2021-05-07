@@ -3,9 +3,9 @@ package tk.williamsouza.thoughtsregister
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
-import androidx.viewpager2.widget.ViewPager2
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Dispatchers.Main
@@ -33,9 +33,8 @@ class MainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        val viewPager = activity?.findViewById<ViewPager2>(R.id.navigationViewPager)
         binding.newThoughtActionButton.setOnClickListener {
-            viewPager?.currentItem = 1
+            findNavController().navigate(R.id.action_mainFragment_to_viewPagerFragment)
         }
 
         return binding.root
@@ -65,6 +64,9 @@ class MainFragment : Fragment() {
             withContext(Main){
                 setData(data)
                 thoughtsAdapter.submitList(data)
+                if (data.isNotEmpty()) {
+                    binding.emptyListText.visibility = View.INVISIBLE
+                }
                 thoughtsAdapter.notifyDataSetChanged()
             }
         }

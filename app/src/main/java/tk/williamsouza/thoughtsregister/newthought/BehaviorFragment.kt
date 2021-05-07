@@ -1,4 +1,4 @@
-package tk.williamsouza.thoughtsregister
+package tk.williamsouza.thoughtsregister.newthought
 
 import android.content.Context
 import android.os.Build
@@ -7,14 +7,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import androidx.room.Room
 import androidx.viewpager2.widget.ViewPager2
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
-import tk.williamsouza.thoughtsregister.databinding.FragmentActivatingEventBinding
+import tk.williamsouza.thoughtsregister.R
 import tk.williamsouza.thoughtsregister.databinding.FragmentBehaviorBinding
 import tk.williamsouza.thoughtsregister.models.Thought
 import tk.williamsouza.thoughtsregister.room.AppDatabase
@@ -36,7 +35,7 @@ class BehaviorFragment : Fragment() {
         val viewPager = activity?.findViewById<ViewPager2>(R.id.navigationViewPager)
 
         binding.backButton.setOnClickListener {
-            viewPager?.currentItem = 3
+            viewPager?.currentItem = 2
         }
 
         binding.saveThoughtButton.setOnClickListener {
@@ -62,7 +61,7 @@ class BehaviorFragment : Fragment() {
             }
 
             println("event: $activatingEvent \n thought: $thought \n feeling: $feeling \n behavior: $behavior \n")
-            viewPager?.currentItem = 0
+            findNavController().navigate(R.id.action_viewPagerFragment_to_mainFragment)
         }
 
         val view = binding.root

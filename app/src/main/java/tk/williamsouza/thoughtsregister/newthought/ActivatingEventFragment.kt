@@ -1,4 +1,4 @@
-package tk.williamsouza.thoughtsregister
+package tk.williamsouza.thoughtsregister.newthought
 
 import android.content.Context
 import android.os.Bundle
@@ -6,17 +6,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
-import tk.williamsouza.thoughtsregister.databinding.FragmentThoughtBinding
+import tk.williamsouza.thoughtsregister.R
+import tk.williamsouza.thoughtsregister.databinding.FragmentActivatingEventBinding
 
-class ThoughtFragment : Fragment() {
-    private lateinit var binding: FragmentThoughtBinding
+class ActivatingEventFragment : Fragment() {
+    private lateinit var binding: FragmentActivatingEventBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = FragmentThoughtBinding.inflate(layoutInflater)
+        binding = FragmentActivatingEventBinding.inflate(layoutInflater)
     }
 
     override fun onCreateView(
@@ -27,11 +27,11 @@ class ThoughtFragment : Fragment() {
         val viewPager = activity?.findViewById<ViewPager2>(R.id.navigationViewPager)
 
         binding.backButton.setOnClickListener {
-            viewPager?.currentItem = 1
+            findNavController().navigate(R.id.action_viewPagerFragment_to_mainFragment)
         }
 
         binding.forwardButton.setOnClickListener {
-            viewPager?.currentItem = 3
+            viewPager?.currentItem = 1
         }
 
         viewPager?.addOnLayoutChangeListener { v, left, top, right, bottom, oldLeft, oldTop, oldRight, oldBottom ->
@@ -42,11 +42,10 @@ class ThoughtFragment : Fragment() {
         return view
     }
 
-
     private fun saveInputToSharedPref() {
         val sharedPref = requireActivity().getSharedPreferences("thought", Context.MODE_PRIVATE)
         val editor = sharedPref.edit()
-        editor.putString("thought", binding.thoughtInput.text.toString())
+        editor.putString("activatingEvent", binding.activatingEventInput.text.toString())
         editor.apply()
     }
 }

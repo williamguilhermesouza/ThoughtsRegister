@@ -1,4 +1,4 @@
-package tk.williamsouza.thoughtsregister
+package tk.williamsouza.thoughtsregister.newthought
 
 import android.content.Context
 import android.os.Bundle
@@ -6,17 +6,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
-import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
-import tk.williamsouza.thoughtsregister.databinding.FragmentFeelingBinding
+import tk.williamsouza.thoughtsregister.R
+import tk.williamsouza.thoughtsregister.databinding.FragmentThoughtBinding
 
-class FeelingFragment : Fragment() {
-    private lateinit var binding: FragmentFeelingBinding
+class ThoughtFragment : Fragment() {
+    private lateinit var binding: FragmentThoughtBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = FragmentFeelingBinding.inflate(layoutInflater)
+        binding = FragmentThoughtBinding.inflate(layoutInflater)
     }
 
     override fun onCreateView(
@@ -27,12 +26,11 @@ class FeelingFragment : Fragment() {
         val viewPager = activity?.findViewById<ViewPager2>(R.id.navigationViewPager)
 
         binding.backButton.setOnClickListener {
-            viewPager?.currentItem = 2
+            viewPager?.currentItem = 0
         }
 
         binding.forwardButton.setOnClickListener {
-            viewPager?.currentItem = 4
-
+            viewPager?.currentItem = 2
         }
 
         viewPager?.addOnLayoutChangeListener { v, left, top, right, bottom, oldLeft, oldTop, oldRight, oldBottom ->
@@ -44,11 +42,10 @@ class FeelingFragment : Fragment() {
     }
 
 
-
     private fun saveInputToSharedPref() {
         val sharedPref = requireActivity().getSharedPreferences("thought", Context.MODE_PRIVATE)
         val editor = sharedPref.edit()
-        editor.putString("feeling", binding.feelingInput.text.toString())
+        editor.putString("thought", binding.thoughtInput.text.toString())
         editor.apply()
     }
 }

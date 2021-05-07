@@ -25,7 +25,7 @@ class SplashFragment : Fragment() {
             val sharedPref = requireActivity().getSharedPreferences("onboarding", Context.MODE_PRIVATE)
             val onboarded = sharedPref.getBoolean("onboarding", false)
             if (onboarded) {
-                findNavController().navigate(R.id.action_onboardingViewPagerFragment_to_viewPagerFragment)
+                findNavController().navigate(R.id.action_splashFragment_to_mainFragment)
             } else {
                 findNavController().navigate(R.id.action_splashFragment_to_onboardingViewPagerFragment)
             }

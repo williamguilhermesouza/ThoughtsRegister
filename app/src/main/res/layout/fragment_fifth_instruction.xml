@@ -22,11 +22,11 @@
         app:srcCompat="@drawable/fifth_instruction" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/welcomeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:text="Trata-se da maneira como reagimos aos sentimentos que nos ocorrem. A cadeia de eventos do exemplo nos levou ao sentimento de ansiedade, ao qual o comportamento correspondente pode ser estudar com muito empenho para a prova ou procrastinar os estudos e ver TV."
+        android:text="@string/fifth_instruction"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,7 +49,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="D - Comportamento"
+        android:text="@string/comportamento"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

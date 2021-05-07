@@ -23,11 +23,11 @@
         app:srcCompat="@drawable/fourth_instruction" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/welcomeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
-        android:text="O sentimento se relaciona ao que sentimentos provocado pelo pensamento anterior. Ao pensarmos que não estamos preparados para a prova pode nos ocorrer os sentimentos de ansiedade e preocupação."
+        android:text="@string/fourth_instruction"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,7 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="C - Sentimento"
+        android:text="@string/sentimento"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

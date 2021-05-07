@@ -12,4 +12,14 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="instruction_image">instruction image</string>
     <string name="proxima">Próxima</string>
+    <string name="empty_list_text">Sua lista de pensamentos está vazia! Registre um novo pensamento clicando em +</string>
+    <string name="welcome">Seja Bem Vindo!! O App Thoughts Register é baseado na técnica terapêutica A-B-C-D (ref. Técnicas de terapia cognitiva: manual do terapeuta). Essa técnica será explicada nas próximas telas.</string>
+    <string name="evento_ativador">A - Evento Ativador</string>
+    <string name="second_instruction">O Evento ativador refere-se à situação que ativa o pensamento. Por exemplo, lembrar que "a prova é amanhã", pode ser um evento ativador.</string>
+    <string name="pensamento">B -Pensamento</string>
+    <string name="third_instruction">É o pensamento que automaticamente vem a nossa cabeça quando nos deparamos com o evento ativador. Seguindo nosso exemplo da prova, o pensamento poderia ser "não estou preparado".</string>
+    <string name="sentimento">C - Sentimento</string>
+    <string name="fourth_instruction">O sentimento se relaciona aos sentimentos provocados pelo pensamento anterior. Ao pensarmos que não estamos preparados para a prova pode nos ocorrer os sentimentos de ansiedade e preocupação.</string>
+    <string name="comportamento">D - Comportamento</string>
+    <string name="fifth_instruction">Trata-se da maneira como reagimos aos sentimentos que nos ocorrem. A cadeia de eventos do exemplo nos levou ao sentimento de ansiedade, ao qual o comportamento correspondente pode ser estudar com muito empenho para a prova ou procrastinar os estudos e ver TV.</string>
 </resources>

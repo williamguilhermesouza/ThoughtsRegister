@@ -1,5 +1,6 @@
 package tk.williamsouza.thoughtsregister
 
+import android.content.Context
 import android.os.Bundle
 import android.os.Handler
 import androidx.fragment.app.Fragment
@@ -19,8 +20,15 @@ class SplashFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         Handler().postDelayed({
-            findNavController().navigate(R.id.action_splashFragment_to_onboardingViewPagerFragment)
+            val sharedPref = requireActivity().getSharedPreferences("onboarding", Context.MODE_PRIVATE)
+            val onboarded = sharedPref.getBoolean("onboarding", false)
+            if (onboarded) {
+                findNavController().navigate(R.id.action_onboardingViewPagerFragment_to_viewPagerFragment)
+            } else {
+                findNavController().navigate(R.id.action_splashFragment_to_onboardingViewPagerFragment)
+            }
         }, 3000)
 
         // Inflate the layout for this fragment

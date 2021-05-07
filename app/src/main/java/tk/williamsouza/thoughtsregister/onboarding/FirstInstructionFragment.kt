@@ -21,13 +21,6 @@ class FirstInstructionFragment : Fragment() {
     ): View {
         binding = FragmentFirstInstructionBinding.inflate(layoutInflater)
 
-        val sharedPref = requireActivity().getSharedPreferences("onboarding", Context.MODE_PRIVATE)
-        val onboarded = sharedPref.getBoolean("onboarding", false)
-        if (onboarded) {
-            findNavController().navigate(R.id.action_onboardingViewPagerFragment_to_viewPagerFragment)
-        }
-
-
         val viewPager = activity?.findViewById<ViewPager2>(R.id.onboardingPager)
 
         binding.button.setOnClickListener {

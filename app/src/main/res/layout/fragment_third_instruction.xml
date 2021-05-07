@@ -22,11 +22,11 @@
         app:srcCompat="@drawable/third_instruction" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/welcomeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
-        android:text='É o pensamento que automaticamente vem a nossa cabeça quando nos deparamos com o evento ativador. Seguindo nosso exemplo da prova, o pensamento poderia ser "não estou preparado".'
+        android:text="@string/third_instruction"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,7 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="B -Pensamento"
+        android:text="@string/pensamento"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

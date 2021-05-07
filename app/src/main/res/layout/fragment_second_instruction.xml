@@ -20,13 +20,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/first_instruction" />
+        app:srcCompat="@drawable/second_instruction" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="122dp"
+        android:layout_marginBottom="102dp"
         android:text='O Evento ativador refere-se à situação que ativa o pensamento. Por exemplo, lembrar que "a prova é amanhã", pode ser um evento ativador.'
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"

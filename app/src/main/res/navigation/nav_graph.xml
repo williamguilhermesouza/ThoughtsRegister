@@ -50,5 +50,19 @@
         <action
             android:id="@+id/action_mainFragment_to_viewPagerFragment"
             app:destination="@id/viewPagerFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_thoughtViewFragment"
+            app:destination="@id/thoughtViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/thoughtViewFragment"
+        android:name="tk.williamsouza.thoughtsregister.ThoughtViewFragment"
+        android:label="fragment_thought_view"
+        tools:layout="@layout/fragment_thought_view" >
+        <action
+            android:id="@+id/action_thoughtViewFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/thoughtViewFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>

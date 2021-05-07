@@ -10,4 +10,6 @@
     <string name="digite_o_comportamento_resultante">Digite o comportamento resultante....</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="instruction_image">instruction image</string>
+    <string name="proxima">Próxima</string>
 </resources>

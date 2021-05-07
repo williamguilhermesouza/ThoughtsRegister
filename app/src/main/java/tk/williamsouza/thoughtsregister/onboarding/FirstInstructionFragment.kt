@@ -1,30 +1,37 @@
 package tk.williamsouza.thoughtsregister.onboarding
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.viewpager2.widget.ViewPager2
 import tk.williamsouza.thoughtsregister.R
 import tk.williamsouza.thoughtsregister.databinding.FragmentFirstInstructionBinding
 
 class FirstInstructionFragment : Fragment() {
     private lateinit var binding: FragmentFirstInstructionBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentFirstInstructionBinding.inflate(layoutInflater)
 
-        binding.button.setOnClickListener {
+        val sharedPref = requireActivity().getSharedPreferences("onboarding", Context.MODE_PRIVATE)
+        val onboarded = sharedPref.getBoolean("onboarding", false)
+        if (onboarded) {
             findNavController().navigate(R.id.action_onboardingViewPagerFragment_to_viewPagerFragment)
+        }
+
+
+        val viewPager = activity?.findViewById<ViewPager2>(R.id.onboardingPager)
+
+        binding.button.setOnClickListener {
+            viewPager?.currentItem = 1
         }
 
         // Inflate the layout for this fragment

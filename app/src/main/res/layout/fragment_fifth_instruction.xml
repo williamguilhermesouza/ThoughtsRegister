@@ -9,29 +9,29 @@
     android:paddingTop="32dp"
     android:paddingEnd="32dp"
     android:paddingBottom="32dp"
-    tools:context=".onboarding.FirstInstructionFragment">
+    tools:context=".onboarding.FifthInstructionFragment">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:contentDescription="@string/instruction_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/first_instruction" />
+        tools:src="@drawable/fifth_instruction" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Seja Bem Vindo!! O App Thoughts Register é baseado na técnica terapêutica A-B-C-D (ref. Técnicas de terapia cognitiva: manual do terapeuta). Essa técnica será explicada nas próximas telas."
+        android:layout_marginBottom="16dp"
+        android:text="Trata-se da maneira como reagimos aos sentimentos que nos ocorrem. A cadeia de eventos do exemplo nos levou ao sentimento de ansiedade, ao qual o comportamento correspondente pode ser estudar com muito empenho para a prova ou procrastinar os estudos e ver TV."
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
         android:id="@+id/button"
@@ -44,4 +44,14 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="D - Comportamento"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,6 +17,6 @@ interface ThoughtDao{
     @Insert
     suspend fun insertAll(vararg thoughts: Thought)
 
-    @Delete
-    suspend fun delete(thought: Thought)
+    @Query("DELETE FROM thought WHERE id = (:thoughtId)")
+    suspend fun delete(thoughtId: Int)
 }

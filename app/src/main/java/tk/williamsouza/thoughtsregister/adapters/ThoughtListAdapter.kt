@@ -8,8 +8,10 @@ import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.cardview.widget.CardView
+import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import tk.williamsouza.thoughtsregister.MainFragmentDirections
 import tk.williamsouza.thoughtsregister.R
 import tk.williamsouza.thoughtsregister.models.Thought
 import java.time.LocalDateTime
@@ -56,7 +58,14 @@ class ThoughtListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
             thoughtView.text = thought.thought
 
             cardView.setOnClickListener {
-                itemView.findNavController().navigate(R.id.action_mainFragment_to_thoughtViewFragment)
+                val bundle = bundleOf(
+                    "id" to thought.id,
+                    "date" to thought.date,
+                    "activatingEvent" to thought.activatingEvent,
+                    "thought" to thought.thought,
+                    "feeling" to thought.feeling,
+                    "behavior" to thought.behavior)
+                itemView.findNavController().navigate(R.id.action_mainFragment_to_thoughtViewFragment, bundle)
             }
         }
     }

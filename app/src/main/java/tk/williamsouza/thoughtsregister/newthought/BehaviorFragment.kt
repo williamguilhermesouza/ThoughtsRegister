@@ -30,7 +30,7 @@ class BehaviorFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         val viewPager = activity?.findViewById<ViewPager2>(R.id.navigationViewPager)
 
@@ -64,8 +64,7 @@ class BehaviorFragment : Fragment() {
             findNavController().navigate(R.id.action_viewPagerFragment_to_mainFragment)
         }
 
-        val view = binding.root
-        return view
+        return binding.root
 
     }
 }

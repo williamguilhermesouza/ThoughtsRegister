@@ -21,7 +21,7 @@ class FeelingFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         val viewPager = activity?.findViewById<ViewPager2>(R.id.navigationViewPager)
 
@@ -34,12 +34,11 @@ class FeelingFragment : Fragment() {
 
         }
 
-        viewPager?.addOnLayoutChangeListener { v, left, top, right, bottom, oldLeft, oldTop, oldRight, oldBottom ->
+        viewPager?.addOnLayoutChangeListener { _, _, _, _, _, _, _, _, _ ->
             saveInputToSharedPref()
         }
 
-        val view = binding.root
-        return view
+        return binding.root
     }
 
 

@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.viewpager2.widget.ViewPager2
 import tk.williamsouza.thoughtsregister.R
 import tk.williamsouza.thoughtsregister.databinding.FragmentFourthInstructionBinding
-import tk.williamsouza.thoughtsregister.databinding.FragmentThirdInstructionBinding
 
 class FourthInstructionFragment : Fragment() {
     private lateinit var binding: FragmentFourthInstructionBinding

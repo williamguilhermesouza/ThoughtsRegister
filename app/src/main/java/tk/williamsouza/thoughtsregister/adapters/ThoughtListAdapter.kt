@@ -7,11 +7,9 @@ import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.annotation.RequiresApi
-import androidx.cardview.widget.CardView
 import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import tk.williamsouza.thoughtsregister.MainFragmentDirections
 import tk.williamsouza.thoughtsregister.R
 import tk.williamsouza.thoughtsregister.models.Thought
 import java.time.LocalDateTime
@@ -31,7 +29,7 @@ class ThoughtListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when(holder) {
             is ThoughtsViewHolder -> {
-                holder.bind(items.get(position))
+                holder.bind(items[position])
             }
         }
     }
@@ -47,20 +45,20 @@ class ThoughtListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
     class ThoughtsViewHolder constructor(
         itemView: View
     ): RecyclerView.ViewHolder(itemView) {
-        val dateView = itemView.findViewById<TextView>(R.id.dateTextView)
-        val thoughtView = itemView.findViewById<TextView>(R.id.thoughtTextView)
-        val cardView = itemView.findViewById<FrameLayout>(R.id.listItemFrameLayout)
+        val dateView = itemView.findViewById<TextView>(R.id.dateTextView)!!
+        private val thoughtView = itemView.findViewById<TextView>(R.id.thoughtTextView)!!
+        private val cardView = itemView.findViewById<FrameLayout>(R.id.listItemFrameLayout)!!
 
         @RequiresApi(Build.VERSION_CODES.O)
         fun bind(thought: Thought) {
             val date = LocalDateTime.parse(thought.date)
-            dateView.text = date.format(DateTimeFormatter.ISO_LOCAL_DATE)
+            dateView.text = date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy-hh:mm"))
             thoughtView.text = thought.thought
 
             cardView.setOnClickListener {
                 val bundle = bundleOf(
                     "id" to thought.id,
-                    "date" to thought.date,
+                    "date" to LocalDateTime.parse(thought.date).format(DateTimeFormatter.ofPattern("dd/MM/yyyy-hh:mm")),
                     "activatingEvent" to thought.activatingEvent,
                     "thought" to thought.thought,
                     "feeling" to thought.feeling,

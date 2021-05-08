@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import androidx.room.Room
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
@@ -14,7 +13,6 @@ import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import tk.williamsouza.thoughtsregister.databinding.FragmentThoughtViewBinding
-import tk.williamsouza.thoughtsregister.models.Thought
 import tk.williamsouza.thoughtsregister.room.AppDatabase
 
 class ThoughtViewFragment : Fragment() {

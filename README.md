@@ -4,7 +4,7 @@
 
 ## Objective
 ThoughtsRegister is an app that has the objective to aid people in theraphy to register their thoughts, using the A-B-C-D technic  
-The project is deployed to google app store at ...
+The project is deployed to google app store at https://play.google.com/store/apps/details?id=tk.williamsouza.thoughtsregister
 
 ## Privacy
 ThoughtsRegister don't collect and don't use any data from the users. All the data stored as thoughts are locally saved only for the user.

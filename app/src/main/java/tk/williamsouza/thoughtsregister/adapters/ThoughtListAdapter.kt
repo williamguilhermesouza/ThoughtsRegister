@@ -14,6 +14,8 @@ import tk.williamsouza.thoughtsregister.R
 import tk.williamsouza.thoughtsregister.models.Thought
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
+import java.util.*
+import kotlin.collections.ArrayList
 
 
 class ThoughtListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
@@ -52,8 +54,12 @@ class ThoughtListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
         @RequiresApi(Build.VERSION_CODES.O)
         fun bind(thought: Thought) {
             val date = LocalDateTime.parse(thought.date)
-            dateView.text = date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy-hh:mm"))
-            thoughtView.text = thought.thought
+            dateView.text = date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
+            var thoughtSplited = thought.thought.split(" ").toMutableList()
+            val firstWordCapitalized = thoughtSplited[0].capitalize(Locale.ROOT)
+            thoughtSplited[0] = firstWordCapitalized
+            val thoughtCapitalized = thoughtSplited.joinToString(" ")
+            thoughtView.text = thoughtCapitalized
 
             cardView.setOnClickListener {
                 val bundle = bundleOf(

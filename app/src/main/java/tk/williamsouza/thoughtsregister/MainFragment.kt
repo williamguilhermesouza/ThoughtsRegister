@@ -1,5 +1,6 @@
 package tk.williamsouza.thoughtsregister
 
+import android.content.Context
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
@@ -49,7 +50,7 @@ class MainFragment : Fragment() {
     private fun initRecyclerView() {
         val thoughtsView = binding.thoughtsRecyclerView
         thoughtsView.layoutManager = LinearLayoutManager(this.context)
-        thoughtsAdapter = ThoughtListAdapter()
+
         thoughtsView.adapter = thoughtsAdapter
     }
 
@@ -80,8 +81,10 @@ class MainFragment : Fragment() {
         data = _data
     }
 
-    override fun onResume() {
-        super.onResume()
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        thoughtsAdapter = ThoughtListAdapter()
+
         thoughtsAdapter.notifyDataSetChanged()
     }
 

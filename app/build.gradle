@@ -10,6 +10,9 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
+    lintOptions {
+        checkReleaseBuilds false
+    }
 
     defaultConfig {
         applicationId "tk.williamsouza.thoughtsregister"
